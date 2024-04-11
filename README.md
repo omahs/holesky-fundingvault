@@ -11,13 +11,13 @@ Testnet funds are public goods and should be shared freely with entities that ha
 
 The funding vault consists of 2 contracts:
 * The [`FundingVaultProxy`](https://holesky.etherscan.io/address/0x610866c6089768da95524bcc4ce7db61eda3931c) / `FundingVaultV1` upgradable contract, which holds the funding reserves and fulfills fund requests (claims).
-* The [`FundingVaultToken`](https://holesky.etherscan.io/address/0x97652a83cc29043fa9be2781cc0038eba70de911) contract, that provides a ERC721 token which gives permission to claim the allowed funds from the vault.
+* The [`FundingVaultToken`](https://holesky.etherscan.io/address/0x97652a83cc29043fa9be2781cc0038eba70de911) contract, that provides an ERC721 token which gives permission to claim the allowed funds from the vault.
 
-If you're running a project that has a ongoing need for testnet funds (either for development teams or low audience faucets),
-open a issue in this repository to apply for a funding grant. Supply some information about what you need these funds for and how much ETH per month you need. The needs shouldn't exceed a max. of 10k HolETH/month.
+If you're running a project that has an ongoing need for testnet funds (either for development teams or low audience faucets),
+open an issue in this repository to apply for a funding grant. Supply some information about what you need these funds for and how much ETH per month you need. The needs shouldn't exceed a max. of 10k HolETH/month.
 
-If your application is accepted, you'll receive a ERC721 token ("NFT") on holesky, which gives you access to the granted amount of funds when needed. \
-You're responsible for keeping this NFT secure, but you're allowed to transfer it where-ever you want.
+If your application is accepted, you'll receive an ERC721 token ("NFT") on holesky, which gives you access to the granted amount of funds when needed. \
+You're responsible for keeping this NFT secure, but you're allowed to transfer it wherever you want.
 
 If no rules are broken and your project remains active, the grant will persist till the planned end of holesky in Dec 2028.
 
@@ -29,7 +29,7 @@ Available `claim` functions:
 * `claim(uint256 amount)` - request the amount of funds specified by `amount` (in wei) and send to the sender wallet.
 * `claimTo(uint256 amount, address target)` - request the amount of funds specified by `amount` (in wei) and send to `target`.
 
-When supplying a amount of `0`, the whole allowed amount will be paid out.
+When supplying an amount of `0`, the whole allowed amount will be paid out.
 
 The contract is time based. When claiming the full available amount, you can already claim again a few secs later. But in that case, only the funds that piled up during these few secs will be available.
 
